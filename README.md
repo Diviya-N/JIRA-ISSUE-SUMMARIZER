@@ -8,13 +8,16 @@ A multi-agent system built with **LangGraph** that automatically fetches, proces
 
 The pipeline runs four agents in sequence via a LangGraph `StateGraph`:
 
-```
-┌─────────────────┐     ┌───────────────────┐     ┌─────────────────────┐     ┌──────────────────────┐
-│ Agent 1          │────▶│ Agent 2            │────▶│ Agent 3              │────▶│ Agent 4               │
-│ Playwright       │     │ Data Extractor     │     │ Mini Summarizer      │     │ Final Summarizer      │
-│ Screenshot       │     │ Jira REST API      │     │ Chunk-based summaries│     │ Summary + Reason +    │
-│ Capture          │     │ → Preprocessed text│     │ (3–4 lines each)     │     │ Reasoning Trace       │
-└─────────────────┘     └───────────────────┘     └─────────────────────┘     └──────────────────────┘
+## 🧠 Architecture Pipeline
+
+```mermaid
+flowchart LR
+    A[Agent 1<br/>Playwright Screenshot Capture]
+    B[Agent 2<br/>Data Extractor<br/>Jira REST API → Preprocessed Text]
+    C[Agent 3<br/>Mini Summarizer<br/>Chunk-based Summaries (3–4 lines each)]
+    D[Agent 4<br/>Final Summarizer<br/>Summary + Reason + Reasoning Trace]
+
+    A --> B --> C --> D
 ```
 
 | Agent | Role |
@@ -164,6 +167,3 @@ Tests cover agent1 (Playwright), agent2 (Jira fetch), and agent3 (LLM summarizat
 
 ---
 
-## License
-
-MIT
