@@ -12,10 +12,10 @@ The pipeline runs four agents in sequence via a LangGraph `StateGraph`:
 
 ```mermaid
 flowchart LR
-    A[Agent 1<br/>Playwright Screenshot Capture]
-    B[Agent 2<br/>Data Extractor<br/>Jira REST API → Preprocessed Text]
-    C[Agent 3<br/>Mini Summarizer<br/>Chunk-based Summaries (3–4 lines each)]
-    D[Agent 4<br/>Final Summarizer<br/>Summary + Reason + Reasoning Trace]
+    A["Agent 1<br/>Playwright Screenshot Capture"]
+    B["Agent 2<br/>Data Extractor<br/>Jira REST API - Preprocessed Text"]
+    C["Agent 3<br/>Mini Summarizer<br/>Chunk-based Summaries 3-4 lines each"]
+    D["Agent 4<br/>Final Summarizer<br/>Summary + Reason + Reasoning Trace"]
 
     A --> B --> C --> D
 ```
