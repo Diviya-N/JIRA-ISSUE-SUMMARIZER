@@ -4,11 +4,9 @@ A multi-agent system built with **LangGraph** that automatically fetches, proces
 
 ---
 
-## Architecture
+## 🧠 Architecture Pipeline
 
 The pipeline runs four agents in sequence via a LangGraph `StateGraph`:
-
-## 🧠 Architecture Pipeline
 
 ```mermaid
 flowchart LR
