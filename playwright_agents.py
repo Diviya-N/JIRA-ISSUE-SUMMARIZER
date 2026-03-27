@@ -38,7 +38,7 @@ def capture_jira_ticket_screenshot(ticket_url: str, output_file: str = "ticket_s
 
 if __name__ == "__main__":
     # Demo run when executed directly
-    capture_jira_ticket_screenshot("https://diviyanandhakumar.atlassian.net/browse/SCRUM-1")
+    capture_jira_ticket_screenshot("https://atlassian.net/browse/issue-id")
 
 
 """This is to get the login details and save it to a file for reuse in the main agent code.
@@ -50,7 +50,7 @@ Run this once, then comment out."""
 #     context = browser.new_context()
 #     page = context.new_page()
 
-#     page.goto("https://diviyanandhakumar.atlassian.net/browse/SCRUM-1")
+#     page.goto("https://atlassian.net/browse/issue-id")
 #     input("Login manually then press Enter...")
 
 #     context.storage_state(path="JIRA_ISSUE_SUMMARIZER\\jira_auth.json")
